@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gengfo</groupId>
+	<artifactId>mf-mif-usage</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>mf-mif-usage</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+		<sfp.version>6.3</sfp.version>
+		<mif.version>2.1</mif.version>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- MIF Dependency -->
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>Async_MF-frmwk</artifactId>
+			<version>${sfp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- MIF Dependency -->
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Core</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Extend_FTP</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Extend_MF</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Extend_LTS</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Extend_Email</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_Test</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oocl.frm</groupId>
+			<artifactId>MIF_CONFIG</artifactId>
+			<version>${mif.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.0-alpha-4</version>
+				<executions>
+					<execution>
+						<id>copy-sfp-dependencies</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								SFP-Libs
+							</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>
+								false
+							</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>utf-8</encoding>
+					<meminitial>512m</meminitial>
+					<maxmem>1024m</maxmem>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
+
+</project>
