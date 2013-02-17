@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <Component-Config>
+    
+        <Component name="componentPackages" config="componentPackages.xml" desc="Packaging new components"/>
+        
+        <Component name="mfLoggers" config="mfLoggers.xml" desc="MF Loggers"/>
+        <Component name="mifLoggers" config="mifLoggers.xml" desc="MF Loggers"/>
+        <Component name="notifierDefaultControllableConfig" config="notifierDefaultControllableConfig.xml" desc="?"/>
+        
+        <Component name="filDebugLoggers" config="filDebugLoggers.xml" desc="FIL Debug Loggers"/>
+        <Component name="filMessageLoggers" config="filMessageLoggers.xml" desc="FIL Message Loggers"/>
+        <Component name="filConfigurations" config="filConfigurations.xml" desc="FIL Configuration Files"/>
+        <Component name="filEmailNotifiers" config="filEmailNotifiers.xml" desc="FIL Email Notifiers"/>
+        <Component name="filExceptionLoggers" config="filExceptionLoggers.xml" desc="FIL Exception Loggers"/>
+        
+        <Component name="transactionConfig" config="transactionConfig.xml" desc="Transaction Config"/>
+         <Component name="artConfig" config="artConfig.xml" desc="ART Configuration File"/>
+        
+    </Component-Config>
+
+	<Global-Var>
+
+		<var name="IS_DATABASE_BACKUP" value="false" />
+		<var name="JNDI_DNS" value="jdbc/ConfigEnhancementDS" />
+		<var name="GLOBAL_DEBUG_LOG_ENABLED" value="true" />
+		<var name="AUTO_START_MESSAGE_RECEIVERS" value="true" />
+		<var name="AUTO_START_RECOVERY_RECEIVERS" value="false" />
+		<var name="USE_JNDI_ENV_PARM" value="false" />
+		<var name="PRESERVE_BACKWARD_COMPATIBILITY" value="false" />
+		<var name="MF_PROPERTIES_PRESERVE_BACKWARD_COMPATIBILTY" value="true" />
+
+	</Global-Var>
+</Config>

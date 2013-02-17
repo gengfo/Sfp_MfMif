@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mypack.service.MfMifUsageWebService;
+import mypack.msghandler.MyMessageReceiver;
 
 public class ReceiveMsgServlet extends HttpServlet{
 
@@ -24,9 +24,8 @@ public class ReceiveMsgServlet extends HttpServlet{
 		out.println("<html><head><title>" + "Hello SendMsgServlet!</title></head>");
 		out.println("<body><h1>Hello SendMsgServlet!</h1></body></html>");
 		
-		MfMifUsageWebService ws = new MfMifUsageWebService();
-		
-		ws.receiveMessage();		
+		MyMessageReceiver mr = new MyMessageReceiver();
+		mr.receiveMessage();		
 		
 		out.println("<body><h1>Done!</h1></body></html>");
 		

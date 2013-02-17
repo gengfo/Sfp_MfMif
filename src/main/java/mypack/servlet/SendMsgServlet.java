@@ -7,11 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mypack.service.MfMifUsageWebService;
+import mypack.msghandler.MyMessageSender;
 
-public class SendMsgServlet extends HttpServlet{
-	
-	
+public class SendMsgServlet extends HttpServlet {
+
 	/**
 	 * 
 	 */
@@ -19,20 +18,18 @@ public class SendMsgServlet extends HttpServlet{
 
 	public void service(HttpServletRequest req, HttpServletResponse res)
 			throws IOException {
-		
+
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
-		out.println("<html><head><title>" + "Hello SendMsgServlet!</title></head>");
+		out.println("<html><head><title>"
+				+ "Hello SendMsgServlet!</title></head>");
 		out.println("<body><h1>Hello SendMsgServlet!</h1></body></html>");
-		
-		
-		MfMifUsageWebService ws = new MfMifUsageWebService();
-		ws.sendMessage();
-		
-		
+
+		MyMessageSender ms = new MyMessageSender();
+		ms.sendMessage();
+
 		out.println("<body><h1>Done!</h1></body></html>");
-		
-		
+
 	}
 
 }

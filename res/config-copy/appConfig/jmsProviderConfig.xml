@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jms-provider-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="jmsProviderConfigProject.xsd">
+	<jms-providers>
+		<jms-provider>
+			<name></name>
+			<initial-context-factory>com.tibco.tibjms.naming.TibjmsInitialContextFactory</initial-context-factory>
+			<provider-url>tcp://shasun3:7223</provider-url>
+			<security-principal>ivoadmin</security-principal>
+			<security-credentials>ivoadmin</security-credentials>
+			<connection-factory>
+				<local-jndi-name>MessageFrameworkXAPoolCF</local-jndi-name>
+				<remote-jndi-name>XAGenericConnectionFactory</remote-jndi-name>
+				<username>ivoadmin</username>
+				<password>ivoadmin</password>
+			</connection-factory>
+			<connection-factory>
+				<local-jndi-name>MessageFrameworkPoolCF</local-jndi-name>
+				<remote-jndi-name>GenericConnectionFactory</remote-jndi-name>
+				<username>ivoadmin</username>
+				<password>ivoadmin</password>
+			</connection-factory>
+		</jms-provider>
+	</jms-providers>
+	<connection-pool>
+		<max-active>300</max-active>
+		<max-wait>600000</max-wait>
+		<max-idle></max-idle>
+		<max-total></max-total>
+		<min-idle></min-idle>
+		<clean-interval></clean-interval>
+		<idle-time></idle-time>
+	</connection-pool>
+</jms-provider-config>
