@@ -47,8 +47,13 @@ jmsProviderConfigProject.xml
 	irarpdb
 	arpowner/arpowner
 	
+3. build app
+	ant -f build-server.xml package
+
 3. deploy application 
 	D:\GengFo\MyProgs\GitHub\Sfp_MfMif\to-deploy	
+	
+	
 	
 http://localhost:7051/MF_MIF_Usage_Server/SendMsg
 
