@@ -1,1 +1,0 @@
-scomp -src . -out testMsg.jar TestMsg_V1.xsd testMsg.xsdconfig
